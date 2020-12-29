@@ -15,7 +15,7 @@ import {
 	RawShaderMaterial,
 	Vector2,
 	WebGLRenderTarget
-} from "../../../build/three.module.js";
+} from '../../../build/three.module.js';
 
 var _mipmapMaterial = _getMipmapMaterial();
 
@@ -40,6 +40,8 @@ RoughnessMipmapper.prototype = {
 	constructor: RoughnessMipmapper,
 
 	generateMipmaps: function ( material ) {
+
+		if ( 'roughnessMap' in material === false ) return;
 
 		var { roughnessMap, normalMap } = material;
 
